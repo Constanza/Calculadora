@@ -1,44 +1,33 @@
-import java.util.Scanner;
 
-public class calculadora {
+
+import com.kodea.calc.oper.Operador;
+import com.kodea.calc.user.Usuario;
+
+public class Calculadora {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		float resultado = 0;
-		Scanner scanner = new Scanner(System.in);
+		Usuario user = new Usuario();
+		Operador oper = new Operador();
+		double result = 0;
 		
-		
-		System.out.print("Ingrese primer operando: ");
-		int numUno = scanner.nextInt();
-		
-		System.out.print("Ingrese segundo operando: ");
-		int numDos = scanner.nextInt();
-		
-		System.out.print("Operaciones disponibles (+ - /  *)" +  
-		" \nIngrese la operacion a realizar: ");
-		String operacion = scanner.next();
-		
-		switch (operacion) {
+		switch (user.pedirOperador()) {
 		case "+":
-			resultado = numUno + numDos;
+			result = oper.add(user.pedirPrimerOperando(), user.pedirSegundoOperando());
 			break;
 		case "-":
-			resultado = numUno - numDos;
+			result = oper.substract(user.pedirPrimerOperando(), user.pedirSegundoOperando());
 			break;
 		case "/":
-			resultado = numUno / numDos;
+			result = oper.divide(user.pedirPrimerOperando(), user.pedirSegundoOperando());
 			break;
 		case "*":
-			resultado = numUno * numDos;
-			break;
-
-		default:
+			result = oper.multiply(user.pedirPrimerOperando(), user.pedirSegundoOperando());
 			break;
 		}
 		
-		System.out.println("Resultado: " + resultado);
-		
+		System.out.println("Resultado: " + result);
 	}
 	
 	
