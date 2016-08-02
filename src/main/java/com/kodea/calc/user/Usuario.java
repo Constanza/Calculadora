@@ -17,7 +17,7 @@ public class Usuario {
 	}
 	
 	public String pedirOperador() {
-		System.out.print("Operaciones disponibles (+ - /  *)" +  
+		System.out.print("AAAAOperaciones disponibles (+ - /  *)" +  
 				" \nIngrese la operacion a realizar: ");
 		return scanner.next();
 	}
